@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwipy5w5mvl5y"]
+
+[ext_resource type="Script" path="res://scripts/env/background.gd" id="1_c5s6h"]
+[ext_resource type="Texture2D" uid="uid://bvcfohjds434d" path="res://assets/tile/parallax_background/layer_4.png" id="1_rb150"]
+[ext_resource type="Texture2D" uid="uid://8grpgagx01o4" path="res://assets/tile/parallax_background/layer_1.png" id="2_i387e"]
+[ext_resource type="Texture2D" uid="uid://bpfarcors8gef" path="res://assets/tile/parallax_background/layer_2.png" id="3_sopx2"]
+[ext_resource type="Texture2D" uid="uid://cr0aai04qlp7" path="res://assets/tile/parallax_background/layer_3.png" id="4_726x1"]
+
+[node name="Background" type="ParallaxBackground"]
+script = ExtResource("1_c5s6h")
+can_process = true
+layer_speed = [20, 15, 10, 5]
+
+[node name="Layer4" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(320, 180)
+
+[node name="Texture" type="TextureRect" parent="Layer4"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_rb150")
+stretch_mode = 2
+
+[node name="Layer1" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Texture" type="TextureRect" parent="Layer1"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_i387e")
+stretch_mode = 2
+
+[node name="Layer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Texture" type="TextureRect" parent="Layer2"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_sopx2")
+stretch_mode = 2
+
+[node name="Layer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Texture" type="TextureRect" parent="Layer3"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_726x1")
+stretch_mode = 2
+
+[node name="Mask" type="CanvasModulate" parent="."]
+color = Color(0.317647, 0.317647, 0.317647, 1)

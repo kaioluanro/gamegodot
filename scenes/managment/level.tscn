@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dj7tajimw4ufo"]
+
+[ext_resource type="TileSet" uid="uid://doyk4eemjljyi" path="res://resources/floor.tres" id="1_iom3k"]
+[ext_resource type="TileSet" uid="uid://dpgmw4x2qtaop" path="res://resources/normal_decoration_tiles.tres" id="2_ml1t0"]
+[ext_resource type="TileSet" uid="uid://ccdnlkqsnxsy7" path="res://resources/small_decoration_tiles.tres" id="3_2w51q"]
+[ext_resource type="PackedScene" uid="uid://bwipy5w5mvl5y" path="res://scenes/env/background.tscn" id="4_ekyie"]
+[ext_resource type="PackedScene" uid="uid://drrpaj1amhjr3" path="res://scenes/player.tscn" id="5_xepdf"]
+
+[node name="Level" type="Node"]
+
+[node name="LevelDesign" type="Node" parent="."]
+
+[node name="Floor" type="TileMap" parent="LevelDesign"]
+tile_set = ExtResource("1_iom3k")
+format = 2
+layer_0/tile_data = PackedInt32Array(327685, 131072, 2, 262149, 131072, 0, 327684, 65536, 2, 262148, 65536, 0, 327683, 65536, 2, 262147, 65536, 0, 327682, 65536, 2, 262146, 65536, 0, 327681, 65536, 2, 262145, 65536, 0, 327680, 0, 2, 262144, 0, 0, 327696, 131072, 2, 262160, 131072, 0, 327695, 65536, 2, 262159, 65536, 0, 327694, 65536, 2, 262158, 65536, 0, 327693, 65536, 2, 262157, 65536, 0, 327692, 65536, 2, 262156, 65536, 0, 327691, 65536, 2, 262155, 65536, 0, 327690, 65536, 2, 262154, 65536, 0, 327689, 65536, 2, 262153, 65536, 0, 327688, 0, 2, 262152, 0, 0, 655368, 131072, 2, 589832, 131072, 0, 655367, 65536, 2, 589831, 65536, 0, 655366, 65536, 2, 589830, 65536, 0, 655365, 0, 2, 589829, 0, 0, 655375, 131072, 2, 589839, 131072, 0, 655374, 65536, 2, 589838, 65536, 0, 655373, 65536, 2, 589837, 65536, 0, 655372, 65536, 2, 589836, 65536, 0, 655371, 65536, 2, 589835, 65536, 0, 655370, 0, 2, 589834, 0, 0, 589844, 131072, 2, 524308, 131072, 1, 458772, 131072, 1, 393236, 131072, 1, 327700, 131072, 1, 262164, 131072, 1, 196628, 131072, 1, 131092, 131072, 1, 65556, 131072, 0, 589843, 0, 2, 524307, 0, 1, 458771, 0, 1, 393235, 0, 1, 327699, 0, 1, 262163, 0, 1, 196627, 0, 1, 131091, 0, 1, 65555, 0, 0)
+
+[node name="NormalDecorationTiles" type="TileMap" parent="LevelDesign"]
+tile_set = ExtResource("2_ml1t0")
+format = 2
+layer_0/tile_data = PackedInt32Array(196610, 0, 0, 196611, 65536, 0, 196612, 131072, 0, 196617, 0, 0, 196618, 65536, 0, 196619, 65536, 0, 196620, 65536, 0, 196621, 65536, 0, 196622, 131073, 0, 458757, 5, 0, 524293, 5, 1, 196609, 6, 0, 524296, 7, 0, 524302, 8, 0, 524303, 65544, 0, 524299, 1, 0, 524300, 65537, 0, 524301, 131073, 0, 196616, 7, 0, 20, 65544, 0, 19, 8, 0, 131087, 5, 0, 196623, 5, 1)
+
+[node name="CharacterBody2D" parent="LevelDesign" instance=ExtResource("5_xepdf")]
+position = Vector2(85, 61)
+
+[node name="SmallDecorationTiles" type="TileMap" parent="LevelDesign"]
+tile_set = ExtResource("3_2w51q")
+format = 2
+layer_0/tile_data = PackedInt32Array(458757, 0, 0, 458755, 0, 0, 458754, 2, 0, 458763, 1, 0, 458769, 1, 0, 458772, 2, 0, 458775, 0, 0, 458778, 0, 0, 458776, 2, 0, 458782, 2, 0, 458783, 1, 0, 458781, 0, 0, 458785, 2, 0, 1114122, 2, 0, 1114128, 2, 0, 1114123, 2, 0, 1114129, 0, 0, 1114125, 0, 0, 1114138, 1, 0, 1114134, 2, 0, 1114142, 0, 0, 1114143, 1, 0, 65575, 1, 0, 65576, 0, 0, 65577, 1, 0, 65574, 2, 0)
+
+[node name="Background" parent="." instance=ExtResource("4_ekyie")]
